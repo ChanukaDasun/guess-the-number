@@ -15,8 +15,6 @@ def main():
 
     while (no_of_guessings <= minimum_no_of_guesses):
 
-        print(random_number)
-
         input_number = input("Guess a number: ")
         input_number = check_input_type(input_number, upper_bound, lower_bound)
 
