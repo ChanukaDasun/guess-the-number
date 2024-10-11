@@ -15,11 +15,11 @@ def return_message(user_value, random_value, upper_limit, lower_limit, no_of_gue
 
     message = ""
     
-    if user_value > lower_limit and user_value < random_value:
-        message = "You Guessed too small!"
-    elif user_value > random_value and user_value < lower_limit:
-        message = "You Guessed too high!"
+    if user_value >= lower_limit and user_value < random_value:
+        message += "You Guessed too small!"
+    elif user_value > random_value and user_value <= upper_limit:
+        message += "You Guessed too high!"
     elif user_value == random_value:
-        message = f"Congratulations you did it in {no_of_guessings} try!"
+        message += f"Congratulations you did it in {no_of_guessings} try!"
 
     return message

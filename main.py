@@ -2,24 +2,31 @@ import random
 import math
 from modules import check_input_type, return_message
 
-upper_bound = 100
-lower_bound = 1
+def main():
 
-random_number = random.randint(lower_bound, upper_bound)
+    upper_bound = 100
+    lower_bound = 1
 
-minimum_no_of_guesses = math.ceil(math.log2(upper_bound - lower_bound + 1))
+    random_number = random.randint(lower_bound, upper_bound)
 
-no_of_guessings = 1
+    minimum_no_of_guesses = math.ceil(math.log2(upper_bound - lower_bound + 1))
 
-while (no_of_guessings <= minimum_no_of_guesses):
+    no_of_guessings = 1
 
-    print(random_number)
+    while (no_of_guessings <= minimum_no_of_guesses):
 
-    input_number = input("Guess a number: ")
-    input_number = check_input_type(input_number, upper_bound, lower_bound)
+        print(random_number)
 
-    message = return_message(input_number, random_number, upper_bound, lower_bound, no_of_guessings)
-    print(message)
+        input_number = input("Guess a number: ")
+        input_number = check_input_type(input_number, upper_bound, lower_bound)
 
-    if input_number == random_number:
-        break
+        message = return_message(input_number, random_number, upper_bound, lower_bound, no_of_guessings)
+        print(message)
+
+        if input_number == random_number:
+            break
+
+        no_of_guessings += 1
+
+if __name__ == "__main__":
+    main()
